@@ -1,10 +1,20 @@
 import React from "react";
-import "../styles.css";
+import { Button as AntButton } from "antd";
+
+/** Map variant -> ant design props */
+function mapProps(variant) {
+  if (variant === "primary") return { type: "primary" };
+  if (variant === "danger") return { danger: true, type: "primary" };
+  if (variant === "ghost") return { type: "text" };
+  // secondary/default
+  return { type: "default" };
+}
 
 export default function Button({ children, variant = "primary", ...rest }) {
+  const antdProps = mapProps(variant);
   return (
-    <button className={`cbtn cbtn--${variant}`} {...rest}>
+    <AntButton {...antdProps} {...rest}>
       {children}
-    </button>
+    </AntButton>
   );
 }

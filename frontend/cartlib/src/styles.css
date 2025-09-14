@@ -61,3 +61,5 @@
 .drawer__body{flex:1; overflow:auto; padding:1rem}
 .drawer__footer{padding:1rem; border-top:1px solid var(--border)}
 .iconbtn{background:transparent; color:var(--text); border:none; font-size:18px; cursor:pointer}
+
+/* src/cartlib.css */

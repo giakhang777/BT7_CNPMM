@@ -1,12 +1,16 @@
 import React from "react";
-import "../styles.css";
+import { Input, Typography } from "antd";
 
 export default function InputText({ label, error, ...rest }) {
   return (
-    <label className="cinput">
-      {label && <span className="cinput__label">{label}</span>}
-      <input className={`cinput__field ${error ? "has-error" : ""}`} {...rest} />
-      {error && <span className="cinput__error">{error}</span>}
-    </label>
+    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+      {label && <Typography.Text type="secondary">{label}</Typography.Text>}
+      <Input status={error ? "error" : ""} {...rest} />
+      {error && (
+        <Typography.Text type="danger" style={{ fontSize: 12 }}>
+          {error}
+        </Typography.Text>
+      )}
+    </div>
   );
 }
